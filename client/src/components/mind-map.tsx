@@ -36,13 +36,13 @@ export default function MindMap({ onNodeClick }: MindMapProps) {
     Analytics.trackMindMapInteraction('b2c');
     onNodeClick('b2c');
     updatePanel({
-      title: 'B2C - Shothik AI Studio',
-      description: 'Comprehensive AI-powered tools for professionals and creators across multiple industries.',
+      title: 'Individual Solutions',
+      description: 'AI-powered tools for individual professionals and small teams.',
       features: [
-        'Doclyze: Document Management',
-        'Teleport: Medical Conversations',
-        'SmartCrawl: Web Intelligence',
-        'Engineering Insights Platform'
+        'Personal Document Assistant',
+        'Creative Content Tools',
+        'Smart Automation',
+        'Basic Analytics'
       ]
     });
   };
@@ -51,13 +51,13 @@ export default function MindMap({ onNodeClick }: MindMapProps) {
     Analytics.trackMindMapInteraction('b2b');
     onNodeClick('b2b');
     updatePanel({
-      title: 'B2B - Enterprise Solutions',
-      description: 'Scale your business with enterprise-grade AI solutions designed for security, compliance, and performance.',
+      title: 'Enterprise Solutions',
+      description: 'Comprehensive AI platforms designed for organizations and enterprises.',
       features: [
-        'Enterprise Security',
-        'Custom Integrations',
-        'Advanced Analytics',
-        'Dedicated Support'
+        'Doclyze: Document Management',
+        'SmartCrawl: Web Intelligence',
+        'Engineering Insights Platform',
+        'Police Investigation Suite'
       ]
     });
   };
@@ -123,18 +123,18 @@ export default function MindMap({ onNodeClick }: MindMapProps) {
               <text x="500" y="315" textAnchor="middle" fill="white" className="text-sm">Ecosystem</text>
             </g>
             
-            {/* B2C Node */}
+            {/* Individual Solutions Node */}
             <g className="mind-map-node cursor-pointer hover:opacity-80" onClick={showB2CDetails}>
               <circle cx="250" cy="200" r="60" fill="hsl(174, 100%, 33%)" />
-              <text x="250" y="195" textAnchor="middle" fill="white" className="text-base font-semibold">B2C</text>
-              <text x="250" y="210" textAnchor="middle" fill="white" className="text-sm">Studio</text>
+              <text x="250" y="192" textAnchor="middle" fill="white" className="text-sm font-semibold">Individual</text>
+              <text x="250" y="208" textAnchor="middle" fill="white" className="text-sm">Solutions</text>
             </g>
             
-            {/* B2B Node */}
+            {/* Enterprise Solutions Node */}
             <g className="mind-map-node cursor-pointer hover:opacity-80" onClick={showB2BDetails}>
               <circle cx="750" cy="200" r="60" fill="hsl(213, 94%, 68%)" />
-              <text x="750" y="195" textAnchor="middle" fill="white" className="text-base font-semibold">B2B</text>
-              <text x="750" y="210" textAnchor="middle" fill="white" className="text-sm">Enterprise</text>
+              <text x="750" y="192" textAnchor="middle" fill="white" className="text-sm font-semibold">Enterprise</text>
+              <text x="750" y="208" textAnchor="middle" fill="white" className="text-sm">Solutions</text>
             </g>
             
             {/* Feature nodes */}
