@@ -7,84 +7,101 @@ export default function B2CDetails() {
     Analytics.trackButtonClick('Try Studio Free', 'b2c-details');
   };
 
+  const products = [
+    {
+      name: "Doclyze",
+      description: "AI-powered document management with smart categorization and instant chat interaction",
+      impact: "80% faster document access, 50% fewer errors",
+      icon: "📄"
+    },
+    {
+      name: "Teleport",
+      description: "AI-powered doctor-patient conversation platform with real-time transcription",
+      impact: "99% transcription accuracy, multilingual support",
+      icon: "🩺"
+    },
+    {
+      name: "SmartCrawl",
+      description: "Intelligent web crawling engine with semantic understanding and structured data export",
+      impact: "92% extraction accuracy, 99.7% semantic precision",
+      icon: "🕷️"
+    },
+    {
+      name: "Engineering Insights",
+      description: "AI-powered platform for engineering drawings analysis and collaboration",
+      impact: "Smart diagram understanding, instant BOM extraction",
+      icon: "🏗️"
+    }
+  ];
+
   return (
     <section id="b2c-details" className="py-24 bg-gradient-to-br from-brand-accent-light to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-8">
-            <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-4 py-2 rounded-full text-sm font-medium">
-              B2C Solution
-            </div>
-            <h2 className="font-manrope font-bold text-5xl lg:text-6xl text-black leading-tight">
-              Shothik AI Studio
-            </h2>
-            <p className="text-xl text-brand-charcoal leading-relaxed">
-              Empower your creativity with our suite of AI-powered tools designed for content creators, artists, and entrepreneurs.
-            </p>
-            
-            <div className="space-y-6">
-              <div className="flex items-start space-x-4">
-                <div className="w-6 h-6 bg-brand-trust-green rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <Check className="text-white w-3 h-3" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-lg">AI Content Generation</h4>
-                  <p className="text-brand-charcoal">Create compelling content across multiple formats</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-4">
-                <div className="w-6 h-6 bg-brand-trust-green rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <Check className="text-white w-3 h-3" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-lg">Smart Design Assistant</h4>
-                  <p className="text-brand-charcoal">AI-powered design recommendations and automation</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start space-x-4">
-                <div className="w-6 h-6 bg-brand-trust-green rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <Check className="text-white w-3 h-3" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-lg">Collaborative Workspace</h4>
-                  <p className="text-brand-charcoal">Share and collaborate with team members seamlessly</p>
-                </div>
-              </div>
-            </div>
-            
-            <Button 
-              onClick={handleTryStudio}
-              className="bg-black text-white px-12 py-4 rounded-xl text-lg font-light hover-scale hover:bg-gray-900"
-            >
-              Try Studio Free
-            </Button>
+        <div className="text-center mb-16">
+          <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-4 py-2 rounded-full text-sm font-medium mb-6">
+            Professional Solutions
           </div>
-          
-          <div className="relative">
-            {/* Creative workspace mockup */}
-            <img 
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
-              alt="AI-powered creative workspace with modern interface" 
-              className="rounded-2xl shadow-2xl w-full h-auto" 
-            />
-            
-            {/* Floating feature cards */}
-            <div className="absolute -top-4 -right-4 bg-white p-4 rounded-xl shadow-lg animate-float">
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-brand-secondary rounded-full"></div>
-                <span className="text-sm font-medium">AI Magic</span>
+          <h2 className="font-manrope font-bold text-5xl lg:text-6xl text-black leading-tight mb-6">
+            Shothik AI Studio
+          </h2>
+          <p className="text-xl text-brand-charcoal leading-relaxed max-w-3xl mx-auto">
+            Comprehensive AI-powered tools designed for professionals across healthcare, legal, engineering, and business sectors
+          </p>
+        </div>
+
+        {/* Product Grid */}
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
+          {products.map((product, index) => (
+            <div key={index} className="bg-white p-8 rounded-2xl border border-slate-200/50 hover-scale">
+              <div className="flex items-start space-x-4 mb-6">
+                <div className="text-4xl">{product.icon}</div>
+                <div>
+                  <h3 className="font-manrope font-bold text-2xl text-black mb-2">{product.name}</h3>
+                  <p className="text-brand-charcoal leading-relaxed mb-4">{product.description}</p>
+                  <div className="inline-block bg-brand-trust-green/10 text-brand-trust-green px-3 py-1 rounded-full text-sm font-medium">
+                    {product.impact}
+                  </div>
+                </div>
               </div>
             </div>
-            
-            <div className="absolute -bottom-4 -left-4 bg-white p-4 rounded-xl shadow-lg animate-float" style={{ animationDelay: '-2s' }}>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-brand-trust-green rounded-full"></div>
-                <span className="text-sm font-medium">Team Collab</span>
+          ))}
+        </div>
+
+        {/* Key Benefits */}
+        <div className="bg-white p-8 rounded-2xl border border-slate-200/50 mb-12">
+          <h3 className="font-manrope font-bold text-2xl text-black mb-6 text-center">Universal Benefits</h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="text-center">
+              <div className="w-6 h-6 bg-brand-trust-green rounded-full flex items-center justify-center mx-auto mb-3">
+                <Check className="text-white w-3 h-3" />
               </div>
+              <h4 className="font-semibold text-lg mb-2">Intelligent Automation</h4>
+              <p className="text-brand-charcoal text-sm">Reduce manual work by up to 80% with smart AI processing</p>
+            </div>
+            <div className="text-center">
+              <div className="w-6 h-6 bg-brand-trust-green rounded-full flex items-center justify-center mx-auto mb-3">
+                <Check className="text-white w-3 h-3" />
+              </div>
+              <h4 className="font-semibold text-lg mb-2">Multi-Industry Support</h4>
+              <p className="text-brand-charcoal text-sm">Tailored solutions for healthcare, legal, engineering, and more</p>
+            </div>
+            <div className="text-center">
+              <div className="w-6 h-6 bg-brand-trust-green rounded-full flex items-center justify-center mx-auto mb-3">
+                <Check className="text-white w-3 h-3" />
+              </div>
+              <h4 className="font-semibold text-lg mb-2">Seamless Integration</h4>
+              <p className="text-brand-charcoal text-sm">Connect with existing tools and workflows effortlessly</p>
             </div>
           </div>
+        </div>
+        
+        <div className="text-center">
+          <Button 
+            onClick={handleTryStudio}
+            className="bg-black text-white px-12 py-4 rounded-xl text-lg font-light hover-scale hover:bg-gray-900"
+          >
+            Explore All Solutions
+          </Button>
         </div>
       </div>
     </section>
