@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useLocation } from 'wouter';
 import { Analytics } from '@/lib/analytics';
 
 interface MindMapProps {
@@ -13,6 +14,7 @@ interface PanelData {
 
 export default function MindMap({ onNodeClick }: MindMapProps) {
   const [panelData, setPanelData] = useState<PanelData | null>(null);
+  const [, setLocation] = useLocation();
 
   const updatePanel = (data: PanelData) => {
     setPanelData(data);
@@ -64,6 +66,22 @@ export default function MindMap({ onNodeClick }: MindMapProps) {
 
   const showFeature = (featureName: string) => {
     Analytics.trackMindMapInteraction(`feature_${featureName}`);
+    
+    // Navigation to dedicated platform pages
+    const platformRoutes: Record<string, string> = {
+      'doclyze': '/platforms/doclyze',
+      'smartcrawl': '/platforms/smartcrawl',
+      'engineering': '/platforms/engineering',
+      'teleport': '/platforms/teleport',
+      'police': '/platforms/police'
+    };
+
+    if (platformRoutes[featureName]) {
+      setLocation(platformRoutes[featureName]);
+      return;
+    }
+
+    // For individual solution features, show panel data
     const featureData: Record<string, PanelData> = {
       'writing': {
         title: 'Smart Writing Tools',
@@ -74,31 +92,6 @@ export default function MindMap({ onNodeClick }: MindMapProps) {
         title: 'Research Assistant',
         description: 'Intelligent research and information gathering capabilities.',
         features: ['Data Collection', 'Source Verification', 'Summary Generation', 'Citation Management']
-      },
-      'doclyze': {
-        title: 'Doclyze Platform',
-        description: 'Enterprise document management with AI-powered organization.',
-        features: ['Smart Categorization', 'Document Chat', 'Version Control', 'Compliance Tracking']
-      },
-      'smartcrawl': {
-        title: 'SmartCrawl Engine',
-        description: 'Intelligent web crawling with semantic understanding.',
-        features: ['Deep Crawling', 'Content Extraction', 'Semantic Analysis', 'Structured Export']
-      },
-      'engineering': {
-        title: 'Engineering Insights',
-        description: 'AI-powered engineering drawing analysis and collaboration.',
-        features: ['Diagram Understanding', 'BOM Extraction', 'Code Compliance', 'CAD Integration']
-      },
-      'teleport': {
-        title: 'Teleport Medical',
-        description: 'AI-powered medical conversation transcription and analysis.',
-        features: ['Real-time Transcription', 'Medical Insights', 'HIPAA Compliance', 'Multi-language']
-      },
-      'police': {
-        title: 'Police Investigation Suite',
-        description: 'AI-driven investigation platform for modern police departments.',
-        features: ['Smart Report Drafting', 'Case File Management', 'Investigation Editing', 'Cross-Case Search']
       }
     };
     
