@@ -65,25 +65,35 @@ export default function MindMap({ onNodeClick }: MindMapProps) {
   const showFeature = (featureName: string) => {
     Analytics.trackMindMapInteraction(`feature_${featureName}`);
     const featureData: Record<string, PanelData> = {
-      'creative': {
-        title: 'Creative AI Tools',
-        description: 'Advanced creative capabilities powered by cutting-edge AI models.',
-        features: ['Image Generation', 'Content Writing', 'Design Automation', 'Style Transfer']
+      'writing': {
+        title: 'Smart Writing Tools',
+        description: 'AI-powered writing assistance for content creation and editing.',
+        features: ['Content Generation', 'Grammar Correction', 'Style Enhancement', 'Multi-language Support']
       },
-      'analytics': {
-        title: 'AI Analytics',
-        description: 'Deep insights and predictive analytics to drive business decisions.',
-        features: ['Predictive Modeling', 'Data Visualization', 'Performance Tracking', 'Custom Reports']
+      'research': {
+        title: 'Research Assistant',
+        description: 'Intelligent research and information gathering capabilities.',
+        features: ['Data Collection', 'Source Verification', 'Summary Generation', 'Citation Management']
       },
-      'automation': {
-        title: 'Process Automation',
-        description: 'Streamline workflows with intelligent automation capabilities.',
-        features: ['Workflow Automation', 'Task Scheduling', 'Integration Hub', 'Smart Triggers']
+      'doclyze': {
+        title: 'Doclyze Platform',
+        description: 'Enterprise document management with AI-powered organization.',
+        features: ['Smart Categorization', 'Document Chat', 'Version Control', 'Compliance Tracking']
       },
-      'security': {
-        title: 'Security & Compliance',
-        description: 'Enterprise-grade security with comprehensive compliance support.',
-        features: ['Data Encryption', 'Access Control', 'Audit Logging', 'Compliance Reporting']
+      'smartcrawl': {
+        title: 'SmartCrawl Engine',
+        description: 'Intelligent web crawling with semantic understanding.',
+        features: ['Deep Crawling', 'Content Extraction', 'Semantic Analysis', 'Structured Export']
+      },
+      'engineering': {
+        title: 'Engineering Insights',
+        description: 'AI-powered engineering drawing analysis and collaboration.',
+        features: ['Diagram Understanding', 'BOM Extraction', 'Code Compliance', 'CAD Integration']
+      },
+      'teleport': {
+        title: 'Teleport Medical',
+        description: 'AI-powered medical conversation transcription and analysis.',
+        features: ['Real-time Transcription', 'Medical Insights', 'HIPAA Compliance', 'Multi-language']
       }
     };
     
@@ -110,11 +120,15 @@ export default function MindMap({ onNodeClick }: MindMapProps) {
             <line x1="500" y1="300" x2="250" y2="200" stroke="hsl(174, 100%, 33%)" strokeWidth="2" className="mind-map-connection" />
             <line x1="500" y1="300" x2="750" y2="200" stroke="hsl(174, 100%, 33%)" strokeWidth="2" className="mind-map-connection" />
             
-            {/* Feature connection lines */}
+            {/* Feature connection lines for Individual Solutions */}
             <line x1="250" y1="200" x2="150" y2="120" stroke="hsl(174, 100%, 33%)" strokeWidth="1" opacity="0.5" className="mind-map-connection" />
             <line x1="250" y1="200" x2="350" y2="120" stroke="hsl(174, 100%, 33%)" strokeWidth="1" opacity="0.5" className="mind-map-connection" />
-            <line x1="750" y1="200" x2="650" y2="120" stroke="hsl(174, 100%, 33%)" strokeWidth="1" opacity="0.5" className="mind-map-connection" />
-            <line x1="750" y1="200" x2="850" y2="120" stroke="hsl(174, 100%, 33%)" strokeWidth="1" opacity="0.5" className="mind-map-connection" />
+            
+            {/* Feature connection lines for Enterprise Solutions */}
+            <line x1="750" y1="200" x2="580" y2="120" stroke="hsl(174, 100%, 33%)" strokeWidth="1" opacity="0.5" className="mind-map-connection" />
+            <line x1="750" y1="200" x2="680" y2="80" stroke="hsl(174, 100%, 33%)" strokeWidth="1" opacity="0.5" className="mind-map-connection" />
+            <line x1="750" y1="200" x2="820" y2="80" stroke="hsl(174, 100%, 33%)" strokeWidth="1" opacity="0.5" className="mind-map-connection" />
+            <line x1="750" y1="200" x2="920" y2="120" stroke="hsl(174, 100%, 33%)" strokeWidth="1" opacity="0.5" className="mind-map-connection" />
             
             {/* Central hub */}
             <g className="mind-map-node cursor-pointer hover:opacity-80" onClick={showCentralHub}>
@@ -137,25 +151,36 @@ export default function MindMap({ onNodeClick }: MindMapProps) {
               <text x="750" y="208" textAnchor="middle" fill="white" className="text-sm">Solutions</text>
             </g>
             
-            {/* Feature nodes */}
-            <g className="mind-map-node cursor-pointer hover:opacity-80" onClick={() => showFeature('creative')}>
+            {/* Individual Solution Features */}
+            <g className="mind-map-node cursor-pointer hover:opacity-80" onClick={() => showFeature('writing')}>
               <circle cx="150" cy="120" r="30" fill="hsl(142, 71%, 45%)" />
-              <text x="150" y="125" textAnchor="middle" fill="white" className="text-xs font-medium">Creative</text>
+              <text x="150" y="125" textAnchor="middle" fill="white" className="text-xs font-medium">Writing</text>
             </g>
             
-            <g className="mind-map-node cursor-pointer hover:opacity-80" onClick={() => showFeature('analytics')}>
+            <g className="mind-map-node cursor-pointer hover:opacity-80" onClick={() => showFeature('research')}>
               <circle cx="350" cy="120" r="30" fill="hsl(38, 92%, 50%)" />
-              <text x="350" y="125" textAnchor="middle" fill="white" className="text-xs font-medium">Analytics</text>
+              <text x="350" y="125" textAnchor="middle" fill="white" className="text-xs font-medium">Research</text>
             </g>
             
-            <g className="mind-map-node cursor-pointer hover:opacity-80" onClick={() => showFeature('automation')}>
-              <circle cx="650" cy="120" r="30" fill="hsl(258, 90%, 66%)" />
-              <text x="650" y="125" textAnchor="middle" fill="white" className="text-xs font-medium">Automation</text>
+            {/* Enterprise Platform Nodes */}
+            <g className="mind-map-node cursor-pointer hover:opacity-80" onClick={() => showFeature('doclyze')}>
+              <circle cx="580" cy="120" r="28" fill="hsl(258, 90%, 66%)" />
+              <text x="580" y="125" textAnchor="middle" fill="white" className="text-xs font-medium">Doclyze</text>
             </g>
             
-            <g className="mind-map-node cursor-pointer hover:opacity-80" onClick={() => showFeature('security')}>
-              <circle cx="850" cy="120" r="30" fill="hsl(0, 84%, 60%)" />
-              <text x="850" y="125" textAnchor="middle" fill="white" className="text-xs font-medium">Security</text>
+            <g className="mind-map-node cursor-pointer hover:opacity-80" onClick={() => showFeature('smartcrawl')}>
+              <circle cx="680" cy="80" r="28" fill="hsl(0, 84%, 60%)" />
+              <text x="680" y="85" textAnchor="middle" fill="white" className="text-xs font-medium">SmartCrawl</text>
+            </g>
+            
+            <g className="mind-map-node cursor-pointer hover:opacity-80" onClick={() => showFeature('engineering')}>
+              <circle cx="820" cy="80" r="28" fill="hsl(45, 93%, 47%)" />
+              <text x="820" y="85" textAnchor="middle" fill="white" className="text-xs font-medium">Engineering</text>
+            </g>
+            
+            <g className="mind-map-node cursor-pointer hover:opacity-80" onClick={() => showFeature('teleport')}>
+              <circle cx="920" cy="120" r="28" fill="hsl(195, 85%, 41%)" />
+              <text x="920" y="125" textAnchor="middle" fill="white" className="text-xs font-medium">Teleport</text>
             </g>
           </svg>
           
