@@ -1,0 +1,121 @@
+Shothik AI Design System Documentation
+Brand Philosophy
+The Shothik AI design system follows Steve Jobs' minimalism principles - "Simplicity is the ultimate sophistication." Every element serves a purpose, with radical focus and intentional white space.
+
+Color Palette
+Primary Brand Colors
+Primary Brand: #005249 (HSL: 180, 100%, 15%)
+
+Deep teal representing trust, stability, and growth
+Used for primary CTAs and brand elements
+Secondary Brand: #00AA93 (HSL: 174, 100%, 33%)
+
+Vibrant teal for innovation and energy
+Used for interactive elements and highlights
+Neutral Foundation
+Pure White: #FFFFFF - Primary background (Jobs-inspired clean slate)
+Deep Black: #000000 - Typography and primary CTAs
+Charcoal: #374151 (HSL: 215, 25%, 27%) - Body text and secondary content
+Light Gray: #6B7280 (HSL: 215, 16%, 47%) - Muted text and labels
+Accent Colors
+Accent Light: #EAFDF9 (HSL: 160, 60%, 96%) - Subtle backgrounds and hover states
+Accent Highlight: #E7FEFE (HSL: 180, 100%, 96%) - Interactive feedback
+Trust & Security Indicators
+Trust Green: #22C55E (HSL: 142, 71%, 45%) - Success states and security badges
+Security Blue: #3B82F6 (HSL: 213, 94%, 68%) - Trust indicators and certifications
+Warning Amber: #F59E0B (HSL: 38, 92%, 50%) - Caution and attention states
+Typography System
+Font Stack
+Primary: 'Inter' - Clean, readable sans-serif for body text
+Display: 'Manrope' - Geometric font for headlines and hero text
+Fallback: system-ui, -apple-system, sans-serif
+Typography Hierarchy
+Hero Headlines: 7xl-9xl (112px-224px), font-thin, tracking-tight
+Section Headlines: 4xl-6xl (36px-60px), font-bold, letter-spacing -0.025em
+Body Large: 3xl (30px), font-light for hero subtext
+Body Regular: Base (16px), line-height 1.6 for optimal readability
+Small Text: sm (14px) for captions and metadata
+Font Features
+font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+text-rendering: optimizeLegibility;
+-webkit-font-smoothing: antialiased;
+Layout & Spacing
+Container System
+Max Width: 5xl (1024px) for hero sections
+Max Width: 7xl (1280px) for content sections
+Responsive Padding: px-4 (mobile) → px-6 (tablet) → px-8 (desktop)
+Spacing Scale (Tailwind)
+Micro: 1-2 (4px-8px) - Icon spacing, borders
+Small: 4-6 (16px-24px) - Component internal spacing
+Medium: 8-12 (32px-48px) - Section spacing
+Large: 16-20 (64px-80px) - Major section gaps
+Extra Large: 24-32 (96px-128px) - Hero section spacing
+Interactive Elements
+Button Styles
+Primary CTA: 
+- Background: Pure black (#000000)
+- Text: White
+- Padding: px-20 py-6 (80px horizontal, 24px vertical)
+- Border-radius: xl (12px)
+- Font: 2xl (24px), font-light
+- Hover: Scale 1.02, bg-gray-900
+Secondary Button:
+- Background: Transparent
+- Border: 1px solid border color
+- Text: Foreground color
+- Hover: Background fill with subtle color
+Micro-Interactions
+Scale: 1.01-1.02 for subtle hover effects
+Duration: 300-500ms for smooth transitions
+Easing: cubic-bezier(0.25, 0.46, 0.45, 0.94) for natural motion
+Component Design Principles
+Cards & Containers
+Background: Pure white with subtle shadows
+Border: 1px solid slate-200/50 for definition
+Border-radius: 2xl (16px) for modern feel
+Shadow: Soft, minimal shadows for depth
+Form Elements
+Input Height: Minimum 44px for touch accessibility
+Focus States: Ring-2 with primary color at 20% opacity
+Placeholder: Muted foreground color
+Error States: Destructive color with clear messaging
+Responsive Design
+Breakpoint Strategy
+Mobile First Approach:
+- Base: 0-640px (mobile)
+- sm: 640px+ (large mobile)
+- md: 768px+ (tablet)
+- lg: 1024px+ (desktop)
+- xl: 1280px+ (large desktop)
+Mobile Optimizations
+Touch Targets: Minimum 44px×44px
+Font Scaling: Responsive text sizes (text-7xl → text-9xl)
+Spacing: Reduced on mobile (space-y-12 → space-y-20)
+Accessibility Standards
+Color Contrast
+AA Compliance: Minimum 4.5:1 ratio for normal text
+AAA Compliance: 7:1 ratio for important content
+Focus Indicators: High contrast ring with 2px thickness
+Motion & Animation
+Respects prefers-reduced-motion: Animations disabled for sensitive users
+Smooth Performance: GPU-accelerated transforms only
+Meaningful Motion: Animations support user understanding
+Dark Mode Support
+Color Adaptations
+Background: Deep slate (#1E293B)
+Text: Light gray (#F8FAFC)
+Primary: Secondary brand color (#00AA93) for better contrast
+Borders: Subtle light borders on dark backgrounds
+Brand Voice & Visual Language
+Steve Jobs Minimalism Applied
+Radical Simplification: Remove everything non-essential
+Focus: One primary message per section
+White Space: Generous spacing for breathing room
+Typography: Ultra-thin fonts with perfect hierarchy
+Single CTA: Clear, unambiguous action paths
+Trust Building Elements
+Security Badges: Subtle, professional indicators
+Testimonials: Clean, authentic presentation
+Statistics: Large, impactful numbers with context
+Certifications: Minimal but visible trust signals
+This design system creates a cohesive, professional, and highly usable interface that builds trust while maintaining the revolutionary simplicity that Steve Jobs championed.
