@@ -37,12 +37,12 @@ export default function MindMap({ onNodeClick }: MindMapProps) {
     onNodeClick('b2c');
     updatePanel({
       title: 'B2C - Shothik AI Studio',
-      description: 'Empower your creativity with AI-powered tools designed for content creators, artists, and entrepreneurs.',
+      description: 'Comprehensive AI-powered tools for professionals and creators across multiple industries.',
       features: [
-        'AI Content Generation',
-        'Smart Design Assistant',
-        'Collaborative Workspace',
-        'Creative Analytics'
+        'Doclyze: Document Management',
+        'Teleport: Medical Conversations',
+        'SmartCrawl: Web Intelligence',
+        'Engineering Insights Platform'
       ]
     });
   };
