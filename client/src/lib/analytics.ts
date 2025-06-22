@@ -20,22 +20,30 @@ export class Analytics {
   private static startTime = Date.now();
 
   static trackEvent(eventName: string, properties: Record<string, any> = {}) {
-    // Google Analytics 4 event tracking
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', eventName, properties);
+    try {
+      // Google Analytics 4 event tracking
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', eventName, properties);
+      }
+      
+      // Facebook Pixel custom event tracking (using trackCustom for non-standard events)
+      if (typeof window !== 'undefined' && window.fbq) {
+        if (['mindmap_interaction', 'scroll_depth', 'button_click'].includes(eventName)) {
+          window.fbq('trackCustom', eventName, properties);
+        } else {
+          window.fbq('track', eventName, properties);
+        }
+      }
+      
+      // Microsoft Clarity custom events
+      if (typeof window !== 'undefined' && window.clarity) {
+        window.clarity('event', eventName);
+      }
+      
+      console.log('Event tracked:', eventName, properties);
+    } catch (error) {
+      console.warn('Analytics tracking failed:', error);
     }
-    
-    // Facebook Pixel event tracking
-    if (typeof window !== 'undefined' && window.fbq) {
-      window.fbq('track', eventName, properties);
-    }
-    
-    // Microsoft Clarity custom events
-    if (typeof window !== 'undefined' && window.clarity) {
-      window.clarity('event', eventName);
-    }
-    
-    console.log('Event tracked:', eventName, properties);
   }
 
   static trackButtonClick(buttonText: string, section: string) {

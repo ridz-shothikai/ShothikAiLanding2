@@ -94,6 +94,11 @@ export default function MindMap({ onNodeClick }: MindMapProps) {
         title: 'Teleport Medical',
         description: 'AI-powered medical conversation transcription and analysis.',
         features: ['Real-time Transcription', 'Medical Insights', 'HIPAA Compliance', 'Multi-language']
+      },
+      'police': {
+        title: 'Police Investigation Suite',
+        description: 'AI-driven investigation platform for modern police departments.',
+        features: ['Smart Report Drafting', 'Case File Management', 'Investigation Editing', 'Cross-Case Search']
       }
     };
     
@@ -128,7 +133,8 @@ export default function MindMap({ onNodeClick }: MindMapProps) {
             <line x1="750" y1="200" x2="580" y2="120" stroke="hsl(174, 100%, 33%)" strokeWidth="1" opacity="0.5" className="mind-map-connection" />
             <line x1="750" y1="200" x2="680" y2="80" stroke="hsl(174, 100%, 33%)" strokeWidth="1" opacity="0.5" className="mind-map-connection" />
             <line x1="750" y1="200" x2="820" y2="80" stroke="hsl(174, 100%, 33%)" strokeWidth="1" opacity="0.5" className="mind-map-connection" />
-            <line x1="750" y1="200" x2="920" y2="120" stroke="hsl(174, 100%, 33%)" strokeWidth="1" opacity="0.5" className="mind-map-connection" />
+            <line x1="750" y1="200" x2="890" y2="120" stroke="hsl(174, 100%, 33%)" strokeWidth="1" opacity="0.5" className="mind-map-connection" />
+            <line x1="750" y1="200" x2="780" y2="400" stroke="hsl(174, 100%, 33%)" strokeWidth="1" opacity="0.5" className="mind-map-connection" />
             
             {/* Central hub */}
             <g className="mind-map-node cursor-pointer hover:opacity-80" onClick={showCentralHub}>
@@ -179,8 +185,14 @@ export default function MindMap({ onNodeClick }: MindMapProps) {
             </g>
             
             <g className="mind-map-node cursor-pointer hover:opacity-80" onClick={() => showFeature('teleport')}>
-              <circle cx="920" cy="120" r="28" fill="hsl(195, 85%, 41%)" />
-              <text x="920" y="125" textAnchor="middle" fill="white" className="text-xs font-medium">Teleport</text>
+              <circle cx="890" cy="120" r="28" fill="hsl(195, 85%, 41%)" />
+              <text x="890" y="125" textAnchor="middle" fill="white" className="text-xs font-medium">Teleport</text>
+            </g>
+            
+            {/* Police Investigation Suite Node */}
+            <g className="mind-map-node cursor-pointer hover:opacity-80" onClick={() => showFeature('police')}>
+              <circle cx="780" cy="400" r="28" fill="hsl(280, 85%, 60%)" />
+              <text x="780" y="405" textAnchor="middle" fill="white" className="text-xs font-medium">Police</text>
             </g>
           </svg>
           

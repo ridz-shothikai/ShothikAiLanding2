@@ -68,38 +68,40 @@ export default function B2BDetails() {
         {/* Enterprise Platforms Grid */}
         <div className="space-y-12 mb-16">
           {enterprisePlatforms.map((platform, index) => (
-            <div key={index} className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
-              <div className={`space-y-6 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                <div className="flex items-center space-x-4">
-                  <div className="text-5xl">{platform.icon}</div>
-                  <div>
-                    <h3 className="font-manrope font-bold text-3xl text-black">{platform.name}</h3>
-                    <p className="text-brand-security-blue font-medium text-lg">{platform.subtitle}</p>
+            <div key={index} className={`platform-card bg-white p-8 rounded-2xl ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
+              <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className={`space-y-6 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                  <div className="flex items-center space-x-4">
+                    <div className="text-5xl">{platform.icon}</div>
+                    <div>
+                      <h3 className="font-manrope font-bold text-3xl text-black">{platform.name}</h3>
+                      <p className="text-brand-security-blue font-medium text-lg">{platform.subtitle}</p>
+                    </div>
+                  </div>
+                  
+                  <p className="text-lg text-brand-charcoal leading-relaxed">{platform.description}</p>
+                  
+                  <div className="inline-block bg-brand-trust-green/10 text-brand-trust-green px-4 py-2 rounded-full font-medium">
+                    {platform.impact}
+                  </div>
+                  
+                  <div className="grid md:grid-cols-2 gap-3">
+                    {platform.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-brand-security-blue rounded-full flex-shrink-0"></div>
+                        <span className="text-brand-charcoal text-sm">{feature}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
                 
-                <p className="text-lg text-brand-charcoal leading-relaxed">{platform.description}</p>
-                
-                <div className="inline-block bg-brand-trust-green/10 text-brand-trust-green px-4 py-2 rounded-full font-medium">
-                  {platform.impact}
-                </div>
-                
-                <div className="grid md:grid-cols-2 gap-3">
-                  {platform.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-brand-security-blue rounded-full flex-shrink-0"></div>
-                      <span className="text-brand-charcoal text-sm">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              
-              <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
-                <div className="bg-gradient-to-br from-brand-accent-light to-brand-accent-highlight p-8 rounded-2xl border border-slate-200/50">
-                  <div className="aspect-video bg-white rounded-xl shadow-inner flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="text-6xl mb-4">{platform.icon}</div>
-                      <div className="text-brand-charcoal font-medium">{platform.name} Dashboard</div>
+                <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+                  <div className="bg-gradient-to-br from-brand-accent-light to-brand-accent-highlight p-8 rounded-2xl border border-slate-200/50">
+                    <div className="aspect-video bg-white rounded-xl shadow-inner flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="text-6xl mb-4">{platform.icon}</div>
+                        <div className="text-brand-charcoal font-medium">{platform.name} Dashboard</div>
+                      </div>
                     </div>
                   </div>
                 </div>

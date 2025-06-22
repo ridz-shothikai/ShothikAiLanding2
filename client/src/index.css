@@ -86,6 +86,17 @@
 @layer components {
   .mind-map-node {
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+  }
+  
+  .mind-map-node:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+  
+  .mind-map-node:focus {
+    outline: 2px solid hsl(175, 100%, 16%);
+    outline-offset: 2px;
   }
   
   .mind-map-connection {
@@ -104,6 +115,16 @@
   
   .hover-scale:hover {
     transform: scale(1.02);
+  }
+
+  .platform-card {
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+  }
+  
+  .platform-card:hover {
+    border-color: hsl(174, 100%, 33%);
+    box-shadow: 0 10px 40px rgba(0, 170, 147, 0.1);
   }
 }
 

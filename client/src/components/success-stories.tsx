@@ -3,30 +3,36 @@ import { Star } from 'lucide-react';
 export default function SuccessStories() {
   const testimonials = [
     {
-      name: "Marcus Chen",
-      role: "CTO, TechFlow Inc.",
+      name: "Dr. Emily Carter",
+      role: "Chief Medical Officer, Regional Health Network",
+      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150",
+      quote: "Teleport has revolutionized our patient documentation. 99% transcription accuracy saves our doctors 3 hours daily, allowing more patient focus time."
+    },
+    {
+      name: "James Wilson",
+      role: "Engineering Manager, BuildTech Corp",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150",
-      quote: "Shothik AI transformed our development workflow. We've reduced project timelines by 40% while maintaining the highest quality standards."
+      quote: "Engineering Insights Platform reduced our drawing analysis time by 70%. The smart BOM extraction and code compliance features are game-changers."
     },
     {
-      name: "Sarah Johnson",
-      role: "Creative Director, Pixel Studios",
+      name: "Detective Maria Santos",
+      role: "Investigation Unit, Metro Police Department",
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150",
-      quote: "The Studio suite is incredible. Our creative team can now focus on strategy while AI handles the repetitive design tasks."
+      quote: "The Police Investigation Suite streamlined our case management. Automated report generation saves 4 hours per case while improving accuracy."
     },
     {
-      name: "David Rodriguez",
-      role: "CEO, DataScale Solutions",
+      name: "David Chen",
+      role: "Legal Operations Director, LawFirm Partners",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=150&h=150",
-      quote: "Enterprise security without compromise. Shothik AI meets all our compliance requirements while delivering exceptional performance."
+      quote: "Doclyze transformed our document workflow. 80% faster access and smart categorization eliminated manual filing, saving 15 hours weekly."
     }
   ];
 
   const stats = [
-    { value: "50K+", label: "Active Users" },
-    { value: "99.9%", label: "Uptime" },
-    { value: "2.5x", label: "Productivity Boost" },
-    { value: "24/7", label: "Support" }
+    { value: "50K+", label: "Documents Processed" },
+    { value: "99.7%", label: "Semantic Accuracy" },
+    { value: "80%", label: "Time Savings" },
+    { value: "5", label: "Enterprise Platforms" }
   ];
 
   return (
@@ -55,7 +61,7 @@ export default function SuccessStories() {
         </div>
 
         {/* Testimonials */}
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="bg-white p-8 rounded-2xl border border-slate-200/50 hover-scale">
               <div className="flex items-center space-x-4 mb-6">
