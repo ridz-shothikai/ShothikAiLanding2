@@ -103,7 +103,7 @@ export default function Home() {
               </button>
               <span className="text-brand-light-gray">/</span>
               <span className="text-brand-charcoal font-medium">
-                {activeSection === 'b2c' ? 'Individual Solutions' : 'Enterprise Solutions'}
+                {activeSection === 'b2c' ? 'Shothik Studio' : 'Enterprise Solutions'}
               </span>
             </nav>
           </div>

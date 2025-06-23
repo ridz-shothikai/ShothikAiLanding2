@@ -44,7 +44,8 @@ export default function MindMap({ onNodeClick }: MindMapProps) {
         'DocLyze - Document Management',
         'SmartCrawl - Data Extraction',
         'Engineering Insight - Technical Solutions',
-        'Police Investigation - Law Enforcement'
+        'Investigation Platform - Law Enforcement',
+        'Teleport - Remote Access Solutions'
       ]
     });
   };
@@ -56,27 +57,20 @@ export default function MindMap({ onNodeClick }: MindMapProps) {
       title: 'Shothik Studio',
       description: 'Creative AI tools and platforms for individual creators and small teams.',
       features: [
-        'Teleport - Remote Solutions',
         'Creative Content Tools',
         'Personal AI Assistant',
-        'Smart Automation'
+        'Smart Automation',
+        'Creative Workflows'
       ]
     });
   };
 
+  const showB2CDetails = () => {
+    showStudioDetails();
+  };
+
   const showB2BDetails = () => {
-    Analytics.trackMindMapInteraction('b2b');
-    onNodeClick('b2b');
-    updatePanel({
-      title: 'Enterprise Solutions',
-      description: 'Comprehensive AI platforms designed for organizations and enterprises.',
-      features: [
-        'Doclyze: Document Management',
-        'SmartCrawl: Web Intelligence',
-        'Engineering Insights Platform',
-        'Police Investigation Suite'
-      ]
-    });
+    showEnterpriseDetails();
   };
 
   const showFeature = (featureName: string) => {
@@ -154,8 +148,8 @@ export default function MindMap({ onNodeClick }: MindMapProps) {
             {/* Shothik Studio Node */}
             <g className="mind-map-node cursor-pointer hover:opacity-80" onClick={showStudioDetails}>
               <circle cx="250" cy="200" r="60" fill="hsl(174, 100%, 33%)" />
-              <text x="250" y="192" textAnchor="middle" fill="white" className="text-sm font-semibold">Individual</text>
-              <text x="250" y="208" textAnchor="middle" fill="white" className="text-sm">Solutions</text>
+              <text x="250" y="192" textAnchor="middle" fill="white" className="text-sm font-semibold">Shothik</text>
+              <text x="250" y="208" textAnchor="middle" fill="white" className="text-sm">Studio</text>
             </g>
             
             {/* Enterprise Solutions Node */}
@@ -214,7 +208,7 @@ export default function MindMap({ onNodeClick }: MindMapProps) {
                   <h3 className="font-manrope font-bold text-2xl text-black mb-3">{panelData.title}</h3>
                   <p className="text-brand-charcoal text-lg">{panelData.description}</p>
                 </div>
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
                   {panelData.features.map((feature, index) => (
                     <div key={index} className="bg-brand-accent-light p-4 rounded-xl text-center">
                       <div className="text-brand-primary font-medium">{feature}</div>

@@ -12,13 +12,13 @@ export default function B2CDetails() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="inline-block bg-brand-secondary/10 text-brand-secondary px-4 py-2 rounded-full text-sm font-medium mb-6">
-            Individual Solutions
+            Shothik Studio
           </div>
           <h2 className="font-manrope font-bold text-5xl lg:text-6xl text-black leading-tight mb-6">
-            Personal AI Tools
+            Creative AI Studio
           </h2>
           <p className="text-xl text-brand-charcoal leading-relaxed max-w-3xl mx-auto">
-            Streamlined AI-powered tools designed for individual professionals and small teams to enhance productivity
+            Professional creative tools and AI-powered platforms for individual creators and small teams
           </p>
         </div>
 
