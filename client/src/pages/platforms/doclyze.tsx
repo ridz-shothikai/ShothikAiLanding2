@@ -68,7 +68,7 @@ export default function DoclyzePage() {
             {/* Video Player */}
             <div className="relative">
               <YouTubeEmbed
-                videoId="YOUR_DOCLYZE_VIDEO_ID" // Replace with your actual DocLyze demo video ID
+                videoId="jCPWOtUEda0"
                 title="DocLyze Platform Demo - AI-Powered Document Management"
                 className="shadow-2xl"
               />
