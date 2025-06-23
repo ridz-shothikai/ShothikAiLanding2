@@ -12,6 +12,7 @@ const B2BDetails = lazy(() => import('@/components/b2b-details'));
 const SuccessStories = lazy(() => import('@/components/success-stories'));
 const VideoShowcase = lazy(() => import('@/components/video-showcase'));
 const TeamSection = lazy(() => import('@/components/team-section'));
+const ContactSection = lazy(() => import('@/components/contact-section'));
 const Roadmap = lazy(() => import('@/components/roadmap'));
 const Footer = lazy(() => import('@/components/footer'));
 
@@ -130,6 +131,9 @@ export default function Home() {
       </Suspense>
       <Suspense fallback={<SectionSkeleton />}>
         <TeamSection />
+      </Suspense>
+      <Suspense fallback={<SectionSkeleton />}>
+        <ContactSection />
       </Suspense>
       <Suspense fallback={<SectionSkeleton />}>
         <Roadmap />

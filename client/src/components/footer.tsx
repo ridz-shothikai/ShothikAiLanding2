@@ -6,10 +6,10 @@ export default function Footer() {
     {
       title: "Products",
       links: [
-        { name: "Studio", href: "#" },
-        { name: "Enterprise", href: "#" },
-        { name: "API", href: "#" },
-        { name: "Mobile", href: "#" }
+        { name: "Shothik Studio", href: "#" },
+        { name: "Enterprise Solutions", href: "#" },
+        { name: "DocLyze", href: "/platforms/doclyze" },
+        { name: "SmartCrawl", href: "/platforms/smartcrawl" }
       ]
     },
     {
@@ -18,7 +18,7 @@ export default function Footer() {
         { name: "About", href: "#" },
         { name: "Careers", href: "#" },
         { name: "Press", href: "#" },
-        { name: "Contact", href: "#" }
+        { name: "Contact", href: "#contact" }
       ]
     },
     {
@@ -31,12 +31,28 @@ export default function Footer() {
       ]
     },
     {
-      title: "Legal",
-      links: [
-        { name: "Privacy", href: "#" },
-        { name: "Terms", href: "#" },
-        { name: "Security", href: "#" },
-        { name: "Cookies", href: "#" }
+      title: "Global Offices",
+      offices: [
+        { 
+          country: "United States", 
+          address: "1412 Broadway, New York, NY 10118",
+          type: "Head Office"
+        },
+        { 
+          country: "United Kingdom", 
+          address: "2nd Floor College House, 17 King Edwards Road, Ruislip, London, HA4 7AE",
+          type: "Corporate Office"
+        },
+        { 
+          country: "India", 
+          address: "L2, 23 BLOCK L2, JYANGRA KRISHNAPUR, New Town, West Bengal, 700059",
+          type: "Corporate Office"
+        },
+        { 
+          country: "Bangladesh", 
+          address: "Tropical Alauddin Tower, Plot No. 32/C, Road-2, Sector-3, Uttara, Dhaka 1230",
+          type: "Corporate Office"
+        }
       ]
     }
   ];
@@ -67,15 +83,27 @@ export default function Footer() {
           {footerSections.map((section, index) => (
             <div key={index}>
               <h4 className="font-manrope font-bold text-lg mb-4">{section.title}</h4>
-              <ul className="space-y-2 text-gray-400">
-                {section.links.map((link, linkIndex) => (
-                  <li key={linkIndex}>
-                    <a href={link.href} className="hover:text-white transition-colors">
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              {section.links ? (
+                <ul className="space-y-2 text-gray-400">
+                  {section.links.map((link, linkIndex) => (
+                    <li key={linkIndex}>
+                      <a href={link.href} className="hover:text-white transition-colors">
+                        {link.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              ) : section.offices ? (
+                <div className="space-y-4 text-gray-400">
+                  {section.offices.map((office, officeIndex) => (
+                    <div key={officeIndex} className="text-sm">
+                      <div className="font-semibold text-white mb-1">{office.country}</div>
+                      <div className="text-xs text-gray-500 mb-1">{office.type}</div>
+                      <div className="leading-relaxed">{office.address}</div>
+                    </div>
+                  ))}
+                </div>
+              ) : null}
             </div>
           ))}
         </div>
