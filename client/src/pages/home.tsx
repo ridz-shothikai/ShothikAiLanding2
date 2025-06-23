@@ -16,20 +16,20 @@ const ContactSection = lazy(() => import('@/components/contact-section'));
 const Roadmap = lazy(() => import('@/components/roadmap'));
 const Footer = lazy(() => import('@/components/footer'));
 
-// Loading skeletons
+// Optimized loading skeleton
 const SectionSkeleton = () => (
-  <div className="py-24">
+  <div className="py-16">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-16">
-        <Skeleton className="h-12 w-80 mx-auto mb-4" />
-        <Skeleton className="h-6 w-2/3 mx-auto" />
+      <div className="text-center mb-12">
+        <Skeleton className="h-8 w-64 mx-auto mb-3" />
+        <Skeleton className="h-4 w-96 mx-auto" />
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {Array.from({ length: 6 }).map((_, i) => (
-          <div key={i} className="space-y-4">
-            <Skeleton className="h-48 rounded-2xl" />
-            <Skeleton className="h-6 w-3/4" />
-            <Skeleton className="h-4 w-full" />
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {Array.from({ length: 3 }).map((_, i) => (
+          <div key={i} className="space-y-3">
+            <Skeleton className="h-32 rounded-xl" />
+            <Skeleton className="h-4 w-3/4" />
+            <Skeleton className="h-3 w-full" />
           </div>
         ))}
       </div>
@@ -44,29 +44,36 @@ export default function Home() {
   // Enable resource preloading for better performance
   usePreloadResources();
 
-  // Use optimized scroll tracking
+  // Use optimized scroll tracking with debouncing
   useOptimizedScrollTracking((percentage) => {
-    Analytics.trackScrollDepth(percentage);
+    if (percentage % 25 === 0) { // Only track at 25% intervals
+      Analytics.trackScrollDepth(percentage);
+    }
   });
 
   useEffect(() => {
-    // Initialize analytics tracking
-    Analytics.initScrollTracking();
+    // Initialize analytics tracking with error handling
+    try {
+      Analytics.initScrollTracking();
+    } catch (error) {
+      console.warn('Analytics initialization failed:', error);
+    }
   }, []);
 
   const handleNodeClick = (nodeType: string) => {
     setIsLoading(true);
     setActiveSection(nodeType);
     
-    // Scroll to the appropriate section with loading state
-    setTimeout(() => {
+    // Optimized scroll with immediate state update
+    requestAnimationFrame(() => {
       const sectionId = nodeType === 'b2c' ? 'b2c-details' : 'b2b-details';
       const element = document.getElementById(sectionId);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-      setIsLoading(false);
-    }, 300);
+      // Reduce loading time
+      setTimeout(() => setIsLoading(false), 150);
+    });
   };
 
   const resetToEcosystem = () => {

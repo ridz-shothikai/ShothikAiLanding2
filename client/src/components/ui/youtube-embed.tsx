@@ -28,8 +28,11 @@ export function YouTubeEmbed({
   const [thumbnailUrl, setThumbnailUrl] = useState('');
 
   useEffect(() => {
-    // Load high-quality thumbnail
-    setThumbnailUrl(`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`);
+    // Load high-quality thumbnail with fallback
+    const img = new Image();
+    img.onload = () => setThumbnailUrl(`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`);
+    img.onerror = () => setThumbnailUrl(`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`);
+    img.src = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
   }, [videoId]);
 
   const handlePlay = () => {
