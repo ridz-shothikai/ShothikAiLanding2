@@ -192,6 +192,44 @@ export default function DoclyzePage() {
         </div>
       </section>
 
+      {/* Brochure Display Section */}
+      <section className="py-24 bg-gradient-to-br from-brand-accent-light to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="font-manrope font-bold text-4xl text-black mb-6">
+              DocLyze Platform Overview
+            </h2>
+            <p className="text-xl text-brand-charcoal max-w-3xl mx-auto">
+              Explore our comprehensive platform features and capabilities
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white rounded-2xl shadow-2xl p-8 border border-slate-200/50">
+              <img 
+                src="/brochures/doclyze-preview.jpg" 
+                alt="DocLyze Platform Brochure"
+                className="w-full h-auto rounded-xl shadow-lg"
+              />
+              <div className="mt-6 text-center">
+                <Button 
+                  onClick={() => {
+                    const link = document.createElement('a');
+                    link.href = '/brochures/doclyze-preview.jpg';
+                    link.download = 'DocLyze-Platform-Brochure.jpg';
+                    link.click();
+                  }}
+                  className="bg-brand-primary text-white px-8 py-3 rounded-xl font-medium hover:bg-brand-secondary transition-colors"
+                >
+                  <Download className="w-5 h-5 mr-2" />
+                  Download High Resolution
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 bg-black text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -205,17 +243,8 @@ export default function DoclyzePage() {
             <Button className="bg-brand-primary text-white px-8 py-4 rounded-xl text-lg font-light hover-scale hover:bg-brand-secondary">
               Schedule Demo
             </Button>
-            <Button 
-              onClick={() => {
-                const link = document.createElement('a');
-                link.href = '/brochures/doclyze-preview.jpg';
-                link.download = 'DocLyze-Platform-Brochure.jpg';
-                link.click();
-              }}
-              className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-xl text-lg font-light hover-scale hover:bg-white hover:text-black"
-            >
-              <Download className="w-5 h-5 mr-2" />
-              Download Brochure
+            <Button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-xl text-lg font-light hover-scale hover:bg-white hover:text-black">
+              Contact Sales
             </Button>
           </div>
         </div>
