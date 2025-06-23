@@ -6,7 +6,7 @@ import MindMap from '@/components/mind-map';
 import { Analytics } from '@/lib/analytics';
 import { usePreloadResources, useOptimizedScrollTracking } from '@/lib/performance';
 
-// Lazy load components below the fold
+// Lazy load components below the fold with preloading
 const B2CDetails = lazy(() => import('@/components/b2c-details'));
 const B2BDetails = lazy(() => import('@/components/b2b-details'));
 const SuccessStories = lazy(() => import('@/components/success-stories'));
@@ -15,6 +15,12 @@ const TeamSection = lazy(() => import('@/components/team-section'));
 const ContactSection = lazy(() => import('@/components/contact-section'));
 const Roadmap = lazy(() => import('@/components/roadmap'));
 const Footer = lazy(() => import('@/components/footer'));
+
+// Preload critical components
+const preloadComponents = () => {
+  import('@/components/b2c-details');
+  import('@/components/b2b-details');
+};
 
 // Optimized loading skeleton
 const SectionSkeleton = () => (
@@ -62,6 +68,9 @@ export default function Home() {
     } catch (error) {
       console.warn('Analytics initialization failed:', error);
     }
+    
+    // Preload components after initial render
+    setTimeout(preloadComponents, 1000);
   }, []);
 
   const handleNodeClick = (nodeType: string) => {
