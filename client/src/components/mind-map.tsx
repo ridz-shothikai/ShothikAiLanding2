@@ -21,7 +21,12 @@ export default function MindMap({ onNodeClick }: MindMapProps) {
   };
 
   const showCentralHub = () => {
-    Analytics.trackMindMapInteraction('central_hub');
+    try {
+      Analytics.trackMindMapInteraction('central_hub');
+    } catch (error) {
+      console.warn('Analytics tracking failed:', error);
+    }
+    
     updatePanel({
       title: 'Shothik AI Ecosystem',
       description: 'Two comprehensive divisions serving different market segments with cutting-edge intelligent solutions.',
@@ -35,7 +40,12 @@ export default function MindMap({ onNodeClick }: MindMapProps) {
   };
 
   const showEnterpriseDetails = () => {
-    Analytics.trackMindMapInteraction('enterprise');
+    try {
+      Analytics.trackMindMapInteraction('enterprise');
+    } catch (error) {
+      console.warn('Analytics tracking failed:', error);
+    }
+    
     onNodeClick('b2b');
     updatePanel({
       title: 'Enterprise Solutions',
@@ -51,7 +61,12 @@ export default function MindMap({ onNodeClick }: MindMapProps) {
   };
 
   const showStudioDetails = () => {
-    Analytics.trackMindMapInteraction('studio');
+    try {
+      Analytics.trackMindMapInteraction('studio');
+    } catch (error) {
+      console.warn('Analytics tracking failed:', error);
+    }
+    
     onNodeClick('b2c');
     updatePanel({
       title: 'Shothik Studio',

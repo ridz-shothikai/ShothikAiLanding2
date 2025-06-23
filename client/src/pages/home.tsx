@@ -46,8 +46,12 @@ export default function Home() {
 
   // Use optimized scroll tracking with debouncing
   useOptimizedScrollTracking((percentage) => {
-    if (percentage % 25 === 0) { // Only track at 25% intervals
-      Analytics.trackScrollDepth(percentage);
+    try {
+      if (percentage % 25 === 0) { // Only track at 25% intervals
+        Analytics.trackScrollDepth(percentage);
+      }
+    } catch (error) {
+      console.warn('Scroll tracking failed:', error);
     }
   });
 
