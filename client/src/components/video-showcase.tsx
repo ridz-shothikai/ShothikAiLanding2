@@ -10,22 +10,22 @@ export default function VideoShowcase() {
 
   const showcaseVideos = [
     {
-      id: 'dQw4w9WgXcQ', // Replace with actual video IDs
+      id: 'dQw4w9WgXcQ1', // Replace with actual video IDs
       title: 'DocLyze Platform Demo',
       description: 'See how DocLyze transforms document processing with AI'
     },
     {
-      id: 'dQw4w9WgXcQ',
+      id: 'dQw4w9WgXcQ2',
       title: 'SmartCrawl in Action',
       description: 'Advanced web scraping and data extraction capabilities'
     },
     {
-      id: 'dQw4w9WgXcQ',
+      id: 'dQw4w9WgXcQ3',
       title: 'Engineering Platform Overview',
       description: 'Comprehensive engineering solutions for modern businesses'
     },
     {
-      id: 'dQw4w9WgXcQ',
+      id: 'dQw4w9WgXcQ4',
       title: 'Client Success Stories',
       description: 'Real results from our satisfied customers'
     }
