@@ -151,8 +151,8 @@ export default function MindMap({ onNodeClick }: MindMapProps) {
               <text x="500" y="315" textAnchor="middle" fill="white" className="text-sm">Ecosystem</text>
             </g>
             
-            {/* Individual Solutions Node */}
-            <g className="mind-map-node cursor-pointer hover:opacity-80" onClick={showB2CDetails}>
+            {/* Shothik Studio Node */}
+            <g className="mind-map-node cursor-pointer hover:opacity-80" onClick={showStudioDetails}>
               <circle cx="250" cy="200" r="60" fill="hsl(174, 100%, 33%)" />
               <text x="250" y="192" textAnchor="middle" fill="white" className="text-sm font-semibold">Individual</text>
               <text x="250" y="208" textAnchor="middle" fill="white" className="text-sm">Solutions</text>
