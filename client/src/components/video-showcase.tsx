@@ -3,31 +3,31 @@ import { YouTubeEmbed, VideoGallery } from '@/components/ui/youtube-embed';
 export default function VideoShowcase() {
   // Replace these with your actual YouTube video IDs
   const featuredVideo = {
-    id: 'dQw4w9WgXcQ', // Replace with your main video ID
+    id: 'jCPWOtUEda0',
     title: 'Shothik AI - Revolutionizing Digital Solutions',
     description: 'Discover how our AI-powered platforms are transforming businesses across industries.'
   };
 
   const showcaseVideos = [
     {
-      id: 'dQw4w9WgXcQ1', // Replace with actual video IDs
+      id: 'jCPWOtUEda0',
       title: 'DocLyze Platform Demo',
       description: 'See how DocLyze transforms document processing with AI'
     },
     {
-      id: 'dQw4w9WgXcQ2',
+      id: 'aE9MW9OVDDk',
       title: 'SmartCrawl in Action',
       description: 'Advanced web scraping and data extraction capabilities'
     },
     {
-      id: 'dQw4w9WgXcQ3',
+      id: 'nSM89PTFTCQ',
       title: 'Engineering Platform Overview',
       description: 'Comprehensive engineering solutions for modern businesses'
     },
     {
-      id: 'dQw4w9WgXcQ4',
-      title: 'Client Success Stories',
-      description: 'Real results from our satisfied customers'
+      id: 'yEQnD-Vbr8Q',
+      title: 'Police Investigation Platform',
+      description: 'AI-powered law enforcement investigation tools'
     }
   ];
 

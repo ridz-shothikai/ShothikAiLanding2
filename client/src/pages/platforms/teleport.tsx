@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft, Play, Download } from 'lucide-react';
 import { Link } from 'wouter';
 import { Analytics } from '@/lib/analytics';
+import { YouTubeEmbed } from '@/components/ui/youtube-embed';
 
 export default function TeleportPage() {
   const handleWatchDemo = () => {
@@ -59,15 +60,11 @@ export default function TeleportPage() {
             
             {/* Video Player */}
             <div className="relative">
-              <div className="aspect-video bg-gradient-to-br from-brand-accent-light to-brand-accent-highlight rounded-2xl border border-slate-200/50 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-brand-primary rounded-full flex items-center justify-center mx-auto mb-4 cursor-pointer hover:scale-105 transition-transform">
-                    <Play className="text-white w-8 h-8 ml-1" />
-                  </div>
-                  <p className="text-brand-charcoal font-medium">Teleport Medical Demo</p>
-                  <p className="text-brand-light-gray text-sm">4:52 minutes</p>
-                </div>
-              </div>
+              <YouTubeEmbed
+                videoId="NIIfzpNR1x4"
+                title="Teleport Platform Demo - Advanced Remote Access Solutions"
+                className="shadow-2xl"
+              />
             </div>
           </div>
         </div>
