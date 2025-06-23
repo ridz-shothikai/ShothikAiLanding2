@@ -24,27 +24,42 @@ export default function MindMap({ onNodeClick }: MindMapProps) {
     Analytics.trackMindMapInteraction('central_hub');
     updatePanel({
       title: 'Shothik AI Ecosystem',
-      description: 'Our comprehensive AI platform serves both individual creators and enterprise organizations with cutting-edge intelligent solutions.',
+      description: 'Two comprehensive divisions serving different market segments with cutting-edge intelligent solutions.',
       features: [
+        'Enterprise Solutions',
+        'Shothik Studio',
         'Unified AI Infrastructure',
-        'Cross-Platform Integration', 
-        'Scalable Architecture',
-        'Advanced Security'
+        'Cross-Platform Integration'
       ]
     });
   };
 
-  const showB2CDetails = () => {
-    Analytics.trackMindMapInteraction('b2c');
+  const showEnterpriseDetails = () => {
+    Analytics.trackMindMapInteraction('enterprise');
+    onNodeClick('b2b');
+    updatePanel({
+      title: 'Enterprise Solutions',
+      description: 'Comprehensive AI platforms designed for large organizations and businesses.',
+      features: [
+        'DocLyze - Document Management',
+        'SmartCrawl - Data Extraction',
+        'Engineering Insight - Technical Solutions',
+        'Police Investigation - Law Enforcement'
+      ]
+    });
+  };
+
+  const showStudioDetails = () => {
+    Analytics.trackMindMapInteraction('studio');
     onNodeClick('b2c');
     updatePanel({
-      title: 'Individual Solutions',
-      description: 'AI-powered tools for individual professionals and small teams.',
+      title: 'Shothik Studio',
+      description: 'Creative AI tools and platforms for individual creators and small teams.',
       features: [
-        'Personal Document Assistant',
+        'Teleport - Remote Solutions',
         'Creative Content Tools',
-        'Smart Automation',
-        'Basic Analytics'
+        'Personal AI Assistant',
+        'Smart Automation'
       ]
     });
   };
