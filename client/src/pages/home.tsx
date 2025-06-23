@@ -10,6 +10,7 @@ import { usePreloadResources, useOptimizedScrollTracking } from '@/lib/performan
 const B2CDetails = lazy(() => import('@/components/b2c-details'));
 const B2BDetails = lazy(() => import('@/components/b2b-details'));
 const SuccessStories = lazy(() => import('@/components/success-stories'));
+const VideoShowcase = lazy(() => import('@/components/video-showcase'));
 const TeamSection = lazy(() => import('@/components/team-section'));
 const Roadmap = lazy(() => import('@/components/roadmap'));
 const Footer = lazy(() => import('@/components/footer'));
@@ -123,6 +124,9 @@ export default function Home() {
       
       <Suspense fallback={<SectionSkeleton />}>
         <SuccessStories />
+      </Suspense>
+      <Suspense fallback={<SectionSkeleton />}>
+        <VideoShowcase />
       </Suspense>
       <Suspense fallback={<SectionSkeleton />}>
         <TeamSection />
